@@ -1,0 +1,7 @@
+session_name: 2-embedded
+start_directory: .
+windows:
+  - window_name: embedded
+    layout: even-horizontal
+    panes:
+      - shell_command: e -p ./0-unsafe.md ./1-std-split.md ./2-ecosystem.md

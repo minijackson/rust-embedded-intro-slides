@@ -1,0 +1,116 @@
+session_name: 0-language
+start_directory: .
+windows:
+  - window_name: title
+    focus: true
+    panes:
+      - shell_command: e -p ./0-cover.md ./0.5-intro.md
+  - window_name: hello world
+    start_directory: ./1-hello-world
+    layout: even-horizontal
+    panes:
+      - shell_command: e ./src/main.rs
+        focus: true
+      - shell_command:
+        - bash
+        - sleep 2
+        - clear
+        - cargo run
+  - window_name: variables
+    start_directory: ./2-variables
+    layout: even-horizontal
+    panes:
+      - shell_command: e ./src/main.rs
+        focus: true
+      - shell_command:
+        - bash
+        - sleep 2
+        - clear
+        - cargo run
+  - window_name: functions
+    start_directory: ./3-functions
+    layout: even-horizontal
+    panes:
+      - shell_command: e ./src/main.rs
+        focus: true
+      - shell_command:
+        - bash
+        - sleep 2
+        - clear
+        - cargo run
+  - window_name: custom types
+    start_directory: ./4-custom-types
+    layout: even-horizontal
+    panes:
+      - shell_command: e -p ./src/{main,enums,asso_fun}.rs
+        focus: true
+      - shell_command:
+        - bash
+        - sleep 2
+        - clear
+        - cargo run
+  - window_name: traits
+    start_directory: ./5-traits
+    layout: even-horizontal
+    panes:
+      - shell_command: e ./src/main.rs
+        focus: true
+      - shell_command:
+        - bash
+        - sleep 2
+        - clear
+        - cargo run
+  - window_name: modules
+    start_directory: ./6-modules
+    layout: even-horizontal
+    panes:
+      - shell_command: e ./src/main.rs
+        focus: true
+      - shell_command:
+        - bash
+        - sleep 2
+        - clear
+        - fd
+  - window_name: macros
+    start_directory: ./7-macros
+    layout: even-horizontal
+    panes:
+      - shell_command: e ./src/main.rs
+        focus: true
+      - shell_command:
+        - bash
+        - sleep 2
+        - clear
+        - cargo run
+  - window_name: server
+    start_directory: ./8-server
+    layout: main-vertical
+    panes:
+      - shell_command: e -p ./src/bin/main.rs ./src/lib.rs
+        focus: true
+      - shell_command:
+        - bash
+        - sleep 2
+        - clear
+        - cargo run
+      - shell_command:
+        - bash
+        - sleep 2.5
+        - clear
+        - http localhost:7878/sleep \
+      - shell_command:
+        - bash
+        - sleep 3
+        - clear
+        - http localhost:7878/ \
+  - window_name: errors
+    start_directory: ./9-errors
+    layout: even-horizontal
+    panes:
+      - shell_command: e ./src/main.rs
+        focus: true
+      - shell_command:
+        - bash
+        - sleep 2
+        - clear
+        - cargo run

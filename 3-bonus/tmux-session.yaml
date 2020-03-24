@@ -1,0 +1,7 @@
+session_name: 3-bonus
+start_directory: .
+windows:
+  - window_name: embedded
+    layout: even-horizontal
+    panes:
+      - shell_command: e ./0-bonus.md

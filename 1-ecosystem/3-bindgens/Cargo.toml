@@ -1,0 +1,14 @@
+[package]
+name = "bindgens"
+version = "0.1.0"
+authors = ["Minijackson <minijackson@riseup.net>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+
+[build-dependencies]
+bindgen = { version = "0.53", default-features = false, features = ["runtime"] }
+cbindgen = { version = "0.13", default-features = false }
+cc = "1"

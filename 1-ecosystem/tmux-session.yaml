@@ -1,0 +1,48 @@
+session_name: 1-ecosystem
+start_directory: .
+windows:
+  - window_name: exec dua-cli
+    start_directory: ./0-dua-cli
+    layout: even-horizontal
+    panes:
+      - shell_command: e -p ./Cargo.toml src/options.rs src/main.rs
+        focus: true
+      - shell_command:
+        - bash
+        - sleep 2
+        - clear
+        - cargo run
+  - window_name: lib tempfile
+    start_directory: ./1-tempfile
+    layout: even-horizontal
+    panes:
+      - shell_command: e -p ./Cargo.toml src/file/mod.rs src/file/imp/mod.rs src/file/imp/unix.rs
+        focus: true
+      - shell_command:
+        - bash
+        - sleep 2
+        - clear
+        - cargo test
+  - window_name: ffi libz-sys
+    start_directory: ./2-libz-sys
+    layout: even-horizontal
+    panes:
+      - shell_command: e -p ./Cargo.toml build.rs src/lib.rs
+        focus: true
+      - shell_command:
+        - nix-shell -p zlib pkgconfig
+        - sleep 2
+        - clear
+        - cargo test
+  - window_name: bindings gen
+    start_directory: ./3-bindgens
+    layout: even-horizontal
+    panes:
+      - shell_command: e -p ./Cargo.toml build.rs csrc/my_c_lib.h csrc/my_c_lib.c src/main.rs src/lib.rs
+        focus: true
+      - shell_command:
+        - nix-shell
+        - sleep 2
+        - clear
+        - cargo run
+        - fd bindings target
