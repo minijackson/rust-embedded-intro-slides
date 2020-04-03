@@ -6,6 +6,7 @@ Everything Rust!
 	- [ripgrep-all]
 - [fd]
 - [hyperfine]
+- [bat]
 - [dua] / [dust]
 - [starship]
 - [alacritty]
@@ -19,6 +20,7 @@ Everything Rust!
 [ripgrep-all]: <https://github.com/phiresky/ripgrep-all>
 [fd]: <https://github.com/sharkdp/fd>
 [hyperfine]: <https://github.com/sharkdp/hyperfine>
+[bat]: <https://github.com/sharkdp/bat>
 [dua]: <https://github.com/Byron/dua-cli>
 [dust]: <https://github.com/bootandy/dust>
 [starship]: <https://starship.rs/>

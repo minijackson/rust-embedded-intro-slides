@@ -1,7 +1,6 @@
 #![allow(dead_code, unused_variables)]
 
 mod asso_fun;
-mod enums;
 
 struct Person {
     name: String,
@@ -18,7 +17,6 @@ enum Gender {
 
 fn main() {
     start();
-    //enums::main();
     //asso_fun::main();
 }
 
@@ -68,50 +66,4 @@ fn why_do_we_need_string() {
 
     // `std::string` equivalent
     let string2: String = String::from("hello");
-
-    // ====================
-
-    struct OwnedPerson {
-        name: String,
-    }
-
-    struct StaticPerson {
-        name: &'static str,
-    }
-
-    struct ParametricPerson<'a> {
-        name: &'a str,
-    }
-
-    // ====================
-
-    // A name that might be dynamically computed
-    let name = String::from("Marvin");
-
-    OwnedPerson {
-        name: name.clone(), // Copying memory :-/
-    };
-    /*
-    OwnedPerson {
-        name: name, // We take ownership,
-                    // so we can't use `name` after :'(
-    };
-    */
-
-    StaticPerson {
-        name: "Marvin", // Fine because it is in static memory
-    };
-    /*
-    StaticPerson {
-        name: name.as_str(), // ERROR: Not in static memory
-    };
-    */
-
-    ParametricPerson {
-        name: name.as_str(), // Fine but must not outlive name.
-                             // Compiler checked!
-    };
-    ParametricPerson {
-        name: "Marvin", // Also fine, can live forever!
-    };
 }

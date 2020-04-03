@@ -32,14 +32,6 @@ fn get_first2<'lifetime, T>(vec: &'lifetime Vec<T>) -> &'lifetime T {
     try_get_first(vec).unwrap()
 }
 
-fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
-    if x.len() > y.len() {
-        x
-    } else {
-        y
-    }
-}
-
 fn main() {
     println!("The answer is: {}!", return_life());
 
@@ -69,20 +61,6 @@ fn main() {
     };
     println!("{}", dangling_reference);
     */
-
-    let a = String::from("abc");
-    {
-        let b = String::from("abcdef");
-
-        let my_longest_str = {
-            let a_ref: &str = &a;
-            let b_ref: &str = &b;
-
-            longest(a_ref, b_ref)
-        };
-
-        println!("{}", my_longest_str);
-    }
 
     // Borrow rules intro
     /*

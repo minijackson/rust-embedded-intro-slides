@@ -1,5 +1,6 @@
 - Talk about testing
 - Talk about Cargo!
+- Talk about "fearless concurrency!"
 
 ## Comparison with C/C++
 

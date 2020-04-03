@@ -82,29 +82,8 @@ windows:
         - sleep 2
         - clear
         - cargo run
-  - window_name: server
-    start_directory: ./8-server
-    layout: main-vertical
-    panes:
-      - shell_command: e -p ./src/bin/main.rs ./src/lib.rs
-        focus: true
-      - shell_command:
-        - bash
-        - sleep 2
-        - clear
-        - cargo run
-      - shell_command:
-        - bash
-        - sleep 2.5
-        - clear
-        - http localhost:7878/sleep \
-      - shell_command:
-        - bash
-        - sleep 3
-        - clear
-        - http localhost:7878/ \
   - window_name: errors
-    start_directory: ./9-errors
+    start_directory: ./8-errors
     layout: even-horizontal
     panes:
       - shell_command: e ./src/main.rs

@@ -42,16 +42,6 @@ where
     println!("{}", thing.summarize());
 }
 
-// Same thing
-fn print_summary3(thing: &impl Summary) {
-    println!("{}", thing.summarize());
-}
-
-// Dynamic polymorphism
-fn print_summary_dyn(thing: &dyn Summary) {
-    println!("{}", thing.summarize());
-}
-
 fn main() {
     let article = NewsArticle {
         headline: String::from("L'OMS confirme qu'un bon gros kebab sauce samouraï est une protection efficace contre le coronavirus"),
